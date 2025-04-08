@@ -24,7 +24,7 @@
     }
 
     .nav-bar {
-      background-color: #4A90E2;
+      background-color: transparent;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -33,7 +33,24 @@
       width: 100%;
       height: 80px;
       z-index: 999;
+      transition: background-color 0.3s ease;
     }
+    .nav-bar.rolado {
+        background-color: #2977cf;
+        transition: background-color 0.3s ease;
+    }
+    .texto-rolante {
+        position: fixed;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        /* background-color: rgba(255, 255, 255, 0.8); */
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 18px;
+        z-index: 999;
+        transition: top 0.3s ease;
+      }
 
     .image-container {
         margin-top: auto;
