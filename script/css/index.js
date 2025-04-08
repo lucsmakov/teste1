@@ -13,6 +13,33 @@ function KeyFrameLoad() {
             }, 1000);
         }
     }, 1000);
+    const typedText = document.getElementById("typedText");
+    let snippetIndex = 0;
+    let charIndex = 0;
+    function typeLine() {
+        if (snippetIndex < codeSnippets.length) {
+            const line = codeSnippets[snippetIndex];
+            if (charIndex < line.length) {
+                typedText.textContent += line.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeLine, 20);
+            } else {
+            typedText.textContent += "\\n";
+            snippetIndex++;
+            charIndex = 0;
+            setTimeout(typeLine, 300);
+            }
+        }
+    }
+    const codeSnippets = ["A melhor escolha pro seu pet.",
+        "A melhor escolha pro seu pet.", 
+        "A melhor escolha pro seu pet.",
+        "A melhor escolha pro seu pet.",
+        "A melhor escolha pro seu pet.",
+    ]
+
+typeLine();
+
     // const imagens = document.querySelectorAll('.fade');
     // const observador = new IntersectionObserver(function(entradas) {
     //     entradas.forEach(function(entrada) {
